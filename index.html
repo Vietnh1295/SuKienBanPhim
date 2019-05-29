@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="docReady()">
+<img src="img/Smile.jpg" id="Smile" style="position:absolute;left:0; top:0;" width="225" height="224">
+<script>
+    function UpArrowPressed()
+    {
+        var element=document.getElementById('Smile');
+        element.style.top=parseInt(element.style.top)-5+'px';
+    }
+    function DownArrowPressed() {
+        var element=document.getElementById('Smile');
+        element.style.top=parseInt(element.style.top)+5+'px';
+    }
+    function LeftArrowPressed()
+    {
+        var element=document.getElementById('Smile');
+        element.style.left=parseInt(element.style.left)-5+'px';
+    }
+    function RightArrowPressed() {
+        var element=document.getElementById('Smile');
+        element.style.left=parseInt(element.style.left)+5+'px';
+    }
+    function moveSelecttion(evt)
+    {
+    switch (evt.keyCode) {
+        case 38:
+            UpArrowPressed();
+            break;
+        case 37:
+            LeftArrowPressed();
+            break;
+        case 39:
+            RightArrowPressed();
+            break;
+        case 40:
+            DownArrowPressed();
+            break;
+    }
+
+    }
+    function docReady() {
+        window.addEventListener('keydown', moveSelecttion);
+    }
+
+</script>
+</body>
+</html>
